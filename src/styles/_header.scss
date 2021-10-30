@@ -1,0 +1,31 @@
+// Header
+header {
+    h1 {
+        margin: em(2) ;
+        margin-left: 0;
+        float: left;
+        padding-left: 10px;
+    }
+    a {
+        text-decoration: none;
+       
+
+    }
+    @include mq($tablet){
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 em(12) em(12);
+        h1{
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+    @include mq($dekstopWide){
+        margin: em(20);
+        h1{
+            font-size: 3em;
+            margin: 0;
+        }
+    }
+}

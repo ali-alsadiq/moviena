@@ -1,0 +1,12 @@
+//Footer
+
+footer{
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+    border-top: 2px dotted rgba($textColor, 0.6);
+    padding: em(10);
+    p{
+        margin:0;
+    }
+}

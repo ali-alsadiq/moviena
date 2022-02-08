@@ -1,23 +1,24 @@
-// Fav Button
+import * as FaIcons from 'react-icons/fa'
 
 function FavButton({ movie, remove, handleFavClick }) {
 
-    function handleAddFav(){
+    function handleAddFav() {
         handleFavClick(true, movie);
     }
 
-    function handleRemoveFav(){
+    function handleRemoveFav() {
         handleFavClick(false, movie);
     }
 
     return (
         <>
-            {remove === false ? 
-            <button className='fav-button' onClick={handleAddFav}>Add To Favs</button> : 
-            <button className='unfav-button' onClick={handleRemoveFav}>Remove From Favs</button>}
+            {remove === false ?
+
+                <FaIcons.FaStar className='heart' onClick={handleAddFav} /> :
+                <FaIcons.FaStar className='heart heart-active' onClick={handleRemoveFav} />}
         </>
     );
-    
+
 }
 
 FavButton.defaultProps = {

@@ -13,3 +13,26 @@
 
    
 }
+
+.heart{
+    transform: scale(2);
+    &:hover, &:active, &:focus{
+        cursor: pointer;
+        transform: scale(2.3);
+    }
+    path{
+        fill: radient();
+    }
+}
+.heart-active{
+    path{
+        fill:red;
+    }
+}
+.nex-prev-bttn{
+    width: 100%;
+    display: flex;
+    div{
+        margin:15px;
+    }
+}

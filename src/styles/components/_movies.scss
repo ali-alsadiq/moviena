@@ -1,0 +1,199 @@
+.all-movies {
+  display: flex;
+  flex-wrap: wrap;
+}
+.avg-rating {
+  display: block;
+}
+.swiper-slide {
+  max-width: fit-content;
+}
+.movie-card {
+  margin: 10px;
+  width: 180px;
+  position: relative;
+  display: inline-block;
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px 15px 0 0;
+    margin-bottom: 0;
+    z-index: 10;
+  }
+  .rating {
+    border: 1px solid red;
+    border-radius: 50px;
+    max-width: fit-content;
+    padding: 5px;
+  }
+  .movie-title {
+    font-size: 0.75rem;
+    background-color: rgba(0, 0, 0, 0.747);
+    text-align: center;
+  }
+  .CircularProgressbar {
+    max-width: 50px;
+    position: absolute;
+    top: 240px;
+    left: 5px;
+    background: rgb(0, 0, 0);
+    border-radius: 50px;
+    z-index: 2;
+    .CircularProgressbar-text {
+      font-size: 36px;
+    }
+  }
+  h2 {
+    font-size: 16px;
+  }
+}
+
+.single-poster {
+  width: 240px;
+  height: auto;
+  position: relative;
+  left: 60%;
+  // z-index: 100;
+  margin-top: 20%;
+}
+.logo {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin: 50px 5px;
+}
+.genre {
+  color: white;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.817);
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+// .container{
+//     position: relative;
+// }
+// .single-rating,
+// .overview,
+// .release-date,
+// .genres,
+// .movie-info,
+// .fav-button,
+// .unfav-button{
+//     background-color: rgba(0, 0, 0, 0.473);
+//     max-width: fit-content;
+//     padding: 15px;
+//     border-radius: 5px;
+//     font-size: 22px;
+//     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+// }
+
+// .fav-button{
+//     background-color: rgb(26, 0, 26);
+//     font-size: 24px;
+//     color: white;
+//     padding: 20px;
+//     border-radius: 5px;
+//     margin: 5px;
+// }
+// .unfav-button{
+//     background-color: rgb(57, 0, 0);
+//     color: white;
+// }
+.movie-info {
+  background-color: black;
+  padding: 40px 10px 0 10px;
+  position: relative;
+  top: -10px;
+  z-index: 1;
+}
+
+.bgImage img {
+  opacity: 0.5;
+  height: fit-content;
+  z-index: -1;
+  object-position: center;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+.overlay {
+  // position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin-top: 6rem;
+}
+.tmdb-logo {
+  max-width: 550px;
+  margin: 0 auto;
+}
+.single-movie-stats {
+  display: flex;
+  justify-content: space-around;
+}
+
+.link-profile {
+  background-color: rgb(0, 40, 26);
+  border-radius: 5px;
+  padding: 10px;
+  max-width: fit-content;
+  border-radius: 5px;
+  margin: 5px;
+
+  a {
+    text-decoration: none;
+  }
+}
+.btn-favourite {
+  margin-top: 20px;
+}
+.hide2 {
+  display: none;
+}
+.genres-bttn {
+  font-size: 22px;
+  padding: 7px;
+  border-radius: 5px;
+  margin-top: 15px;
+  background-color: rgba(0, 0, 0, 0.719);
+  color: white;
+  position: relative;
+  top: 0;
+  left: 25%;
+  width: 50%;
+  @media (min-width: em(800)) {
+    font-size: 1.5em;
+  }
+  @media (min-width: em(1200)) {
+    font-size: 1.75em;
+  }
+}
+
+//genres styles
+.single-genres-container {
+  display: flex;
+  margin-bottom: 0;
+
+  li {
+    list-style: none;
+    border: 1px solid rgb(77, 50, 0);
+  }
+}
+.single-movie-over-overview {
+  display: flex;
+  justify-content: space-around;
+}
+.single-rating {
+  justify-content: center;
+  font-size: 20px;
+}

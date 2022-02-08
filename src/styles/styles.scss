@@ -1,6 +1,6 @@
 // Main Styles
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Sarabun:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Sarabun:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap');
 
 /* 
 
@@ -15,14 +15,18 @@ font-family: 'Sarabun', sans-serif;
 @import './variables';
 
 //resets
-@import'./reset';
+@import './reset';
 @import 'type';
 
 //components
-@import 'body';
+@import './components/body';
+@import './components/btn-main-nav';
+@import './components/footer';
+@import './components/header';
+@import './components/movies';
+@import './components/nav';
 @import 'wrapper';
-@import 'header';
-@import 'nav';
-@import 'movies';
-@import 'footer';
-@import './btn-main-nav';
+@import './swiper-bundle';
+
+//pages
+@import './pages/search-results';

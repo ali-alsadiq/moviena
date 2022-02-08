@@ -1,74 +1,52 @@
-import MovieCard from '../components/MovieCard';
-import useGlobal from '../store/globalAppState';
-import isFav from '../utilities/isFav';
-import Slider from "react-slick";
+import { Link } from 'react-router-dom'
+import MovieCard from '../components/MovieCard'
+import useGlobal from '../store/globalAppState'
+import isFav from '../utilities/isFav'
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js'
+import SwiperCore, { Pagination, Navigation } from 'swiper'
 
-const slickSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    swipeToSlide: true,
-    slidesToShow: 6,
-    slidesToScroll: 6,
-    autoplaySpeed: 3500,
-    responsive: [
-        {
-            breakpoint: 2500,
-            settings: {
-                slidesToShow: 5,
-                slidesToScroll: 5,
-                infinite: true,
-                dots: true
-            }
-        },
-        {
-            breakpoint: 1900,
-            settings: {
-                slidesToShow: 4,
-                slidesToScroll: 4,
-                infinite: true,
-                dots: true
-            }
-        },
-        {
-            breakpoint: 1400,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3
-            }
-        },
-        {
-            breakpoint: 700,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-            }
-        },
-        {
-            breakpoint: 500,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        }
-    ]
-};
+// install Swiper modules
+SwiperCore.use([Pagination, Navigation])
 
-function Movies({ moviesData }) {
-    const globalStateAndglobalActions = useGlobal();
-    const globalState = globalStateAndglobalActions[0];
+function Movies({ moviesData, genre = null }) {
+  const globalStateAndglobalActions = useGlobal()
+  const globalState = globalStateAndglobalActions[0]
 
-    return (
-        // <div className="movies-container">
-
-        <Slider className="" {...slickSettings}>
-
-            {moviesData.map(movie => <MovieCard key={movie.id} movie={movie}
-                isFav={isFav(globalState.favs, null, movie.id)} />)}
-
-
-        </Slider>
-    )
+  return (
+    <Swiper
+      spaceBetween={10}
+      slidesPerView={'auto'}
+      pagination={{
+        dynamicBullets: true,
+      }}
+      cssMode={true}
+      mousewheel={true}
+      navigation={true}
+      keyboard={true}
+      lazy={true}
+    >
+      {moviesData.map((movie) => (
+        <SwiperSlide key={movie.id}>
+          <MovieCard
+            movie={movie}
+            isFav={isFav(globalState.favs, null, movie.id)}
+          />
+        </SwiperSlide>
+      ))}
+      <SwiperSlide>
+        {genre && (
+          <Link
+            to={{
+              pathname: `/all-movies/${genre.name}`.toLowerCase(),
+              state: { genre },
+            }}
+          >
+            View all {genre.name} movies
+          </Link>
+        )}
+      </SwiperSlide>
+    </Swiper>
+  )
 }
 
 export default Movies
